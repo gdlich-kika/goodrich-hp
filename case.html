@@ -8,45 +8,42 @@
 <body>
 
   <header class="header">
-    <div class="header-logo">株式会社GOODRICH</div>
+    <a href="index.html" class="header-logo">株式会社GOODRICH</a>
     <nav class="header-nav">
       <a href="index.html">トップ</a>
       <a href="#">サービス</a>
-      <a href="case.html">実績</a>
+      <a href="case.html">物件一覧</a>
       <a href="#">お問い合わせ</a>
     </nav>
   </header>
- <div class="filter-row">
+
+  <div class="filter-row">
     <button class="filter-btn active" onclick="filterCards('all', this)">すべて</button>
-    <button class="filter-btn" onclick="filterCards('不動産', this)">不動産業</button>
-    <button class="filter-btn" onclick="filterCards('IT', this)">IT・通信</button>
-  </div>
-
- <div class="cards-wrap">
-
-    <div class="case-card" data-industry="不動産">
-      <span class="tag">不動産業</span>
-      <p class="card-company">株式会社G-PLUS様</p>
-      <p class="card-title">短期成約しました！</p>
-      <p class="card-result">専任媒介契約依頼をしてから<span class="num">30日未満で成約</span>しました！</p>
+    <button class="filter-btn" onclick="filterCards('新着', this)">新着</button>
     </div>
 
-    <div class="case-card" data-industry="IT">
-      <span class="tag">IT・通信</span>
-      <p class="card-company">株式会社A様</p>
-      <p class="card-title">採用コストを40%削減しました</p>
-      <p class="card-result">月40時間かかっていた書類選考を自動化。<span class="num">工数60%削減</span>を達成。</p>
-    </div>
+  <div class="cards-wrap">
+
+    <a href="case-detail.html" class="card-link-wrap">
+      <div class="case-card" data-industry="不動産">
+        <img src="images/koishikawa1.jpg" alt="施工事例写真">
+        <span class="tag">新着</span>
+        <p class="card-company">株式会社G-PLUS様</p>
+        <p class="card-title">小石川パーソナルハウス</p>
+        <p class="card-result">専任媒介契約依頼をしてから<span class="num">30日未満で成約</span>しました！</p>
+      </div>
+    </a>
 
     <div class="case-card" data-industry="不動産">
-      <span class="tag">不動産業</span>
+      <span class="tag">新着</span>
       <p class="card-company">株式会社B様</p>
       <p class="card-title">反響数が2倍になりました</p>
       <p class="card-result">サイトリニューアル後、<span class="num">問い合わせ数が2倍</span>に増加。</p>
     </div>
 
   </div>
-<script>
+
+  <script>
     function filterCards(industry, btn) {
       document.querySelectorAll('.filter-btn').forEach(function(b) {
         b.classList.remove('active');
@@ -62,5 +59,6 @@
       });
     }
   </script>
+
 </body>
 </html>
