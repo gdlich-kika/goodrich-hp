@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>川崎パークホームズ803 | 株式会社GOODRICH</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header-logo">
+  <img src="logo_goodrich.png" alt="株式会社GOODRICH" class="logo-img">
+</a>
+    <nav class="header-nav">
+      <a href="index.html">トップ</a>
+      <a href="#">サービス</a>
+      <a href="case.html">物件一覧</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <div class="detail-hero">
+    <img src="images/kawasaki1.jpg" alt="物件メイン写真" class="detail-hero-img">
+  </div>
+
+  <div class="detail-wrap">
+
+    <a href="case.html" class="back-link">← 一覧に戻る</a>
+
+    <div class="detail-top">
+      <div class="detail-top-left">
+        <span class="tag">新着</span>
+        <h1 class="detail-name">川崎パークホームズ803</h1>
+        <p class="detail-spec">61.39㎡ · 3LDK</p>
+        <p class="detail-price">6,480<span class="detail-price-unit">万円</span></p>
+        <p class="detail-access">JR東海道線 川崎駅 徒歩8分 / 神奈川県川崎市幸区</p>
+      </div>
+      <div class="detail-top-right">
+        <a href="contact.html" class="detail-btn-primary">内見申し込み</a>
+        <a href="contact.html" class="detail-btn-secondary">資料請求</a>
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <h2 class="detail-section-title">写真</h2>
+      <div class="photos-grid">
+        <img src="images/kawasaki1.jpg" alt="写真1" onclick="openLightbox(0)" style="cursor:pointer;">
+        <img src="images/kawasaki2.jpg" alt="写真2" onclick="openLightbox(1)" style="cursor:pointer;">
+        <img src="images/kawasaki3.JPG" alt="写真3" onclick="openLightbox(2)" style="cursor:pointer;">
+        <img src="images/kawasaki4.jpg" alt="写真4" onclick="openLightbox(3)" style="cursor:pointer;">
+      </div>
+    </div>
+
+    <div class="detail-section">
+      <h2 class="detail-section-title">物件詳細</h2>
+      <table class="info-table">
+        <tr><th>物件名</th><td>川崎パークホームズ803</td></tr>
+        <tr><th>価格</th><td>6,480万円</td></tr>
+        <tr><th>住所</th><td>神奈川県川崎市幸区中幸町4丁目19</td></tr>
+        <tr><th>最寄り駅</th><td>JR東海道線 川崎駅 徒歩8分</td></tr>
+        <tr><th>広さ</th><td>61.39㎡</td></tr>
+        <tr><th>間取り</th><td>3LDK</td></tr>
+        <tr><th>築年月</th><td>1996年2月</td></tr>
+      </table>
+    </div>
+
+     <div class="detail-section">
+     <h2 class="detail-section-title">アクセス</h2>
+     <div class="map-wrap">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3246.784754417777!2d139.69019241161402!3d35.53431647252083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601861eeba2d6b8d%3A0x11a7df464c1ecec2!2z5bed5bSO44OR44O844Kv44O744Ob44O844Og44K6!5e0!3m2!1sja!2sjp!4v1776137893632!5m2!1sja!2sjp"
+      width="100%"
+      height="360"
+      style="border:0; display:block;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    <a href="https://maps.google.com/?q=神奈川県川崎市幸区中幸町4丁目19" target="_blank" class="map-link-overlay">
+      Googleマップで詳しく見る →
+    </a>
+  </div>
+</div>
+    </div>
+
+    <div class="detail-cta">
+      <p>この物件についてのお問い合わせはこちら</p>
+      <a href="contact.html" class="hero-btn">お問い合わせする</a>
+    </div>
+
+  </div>
+
+  <div id="lightbox" onclick="closeLightbox(event)" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:1000; align-items:center; justify-content:center;">
+    <button onclick="changePhoto(-1); event.stopPropagation();" style="position:absolute; left:20px; background:rgba(255,255,255,0.2); border:none; color:white; font-size:32px; padding:10px 18px; border-radius:8px; cursor:pointer;">&#8249;</button>
+    <img id="lightbox-img" src="" style="max-width:80%; max-height:80%; border-radius:8px;">
+    <button onclick="changePhoto(1); event.stopPropagation();" style="position:absolute; right:20px; background:rgba(255,255,255,0.2); border:none; color:white; font-size:32px; padding:10px 18px; border-radius:8px; cursor:pointer;">&#8250;</button>
+  </div>
+
+  <script>
+    const photos = [
+      'images/kawasaki1.jpg',
+      'images/kawasaki2.jpg',
+      'images/kawasaki3.jpg',
+      'images/kawasaki4.jpg'
+    ];
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      document.getElementById('lightbox-img').src = photos[currentIndex];
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+
+    function changePhoto(direction) {
+      currentIndex = (currentIndex + direction + photos.length) % photos.length;
+      document.getElementById('lightbox-img').src = photos[currentIndex];
+    }
+
+    function closeLightbox(event) {
+      if (event.target === document.getElementById('lightbox')) {
+        document.getElementById('lightbox').style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
