@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>物件一覧</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header-logo">株式会社GOODRICH</a>
+    <nav class="header-nav">
+      <a href="index.html">トップ</a>
+      <a href="#">サービス</a>
+      <a href="case.html">物件一覧</a>
+      <a href="contact.html"></a>お問い合わせする</a>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <h1>物件一覧</h1>
+    <p>GOODRICHが厳選した物件をご紹介します。</p>
+  </div>
+
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="filterCards('all', this)">すべて</button>
+    <button class="filter-btn" onclick="filterCards('新着', this)">新着</button>
+  </div>
+
+  <div class="cards-wrap">
+
+    <a href="case-detail.html" class="card-link-wrap">
+      <div class="case-card" data-industry="新着">
+        <img src="images/koishikawa1.jpg" alt="施工事例写真">
+        <span class="tag">新着</span>
+        <p class="card-company">東京都文京区</p>
+        <p class="card-title">小石川パーソナルハウス702</p>
+        <p class="card-result">50.68㎡ · 1LDK · <span class="num">4,630万円</span></p>
+      </div>
+    </a>
+
+  </div>
+
+  <script>
+    function filterCards(industry, btn) {
+      document.querySelectorAll('.filter-btn').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      btn.classList.add('active');
+
+      document.querySelectorAll('.case-card').forEach(function(card) {
+        if (industry === 'all' || card.dataset.industry === industry) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
