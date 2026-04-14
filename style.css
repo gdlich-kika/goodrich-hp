@@ -677,3 +677,97 @@ body {
 .form-submit:hover {
   background: #869C8D;
 }
+/* スマホ対応 */
+@media (max-width: 768px) {
+
+  /* ヘッダー */
+  .header {
+    padding: 0 16px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  /* ヒーロー */
+  .hero-photo {
+    height: 400px;
+  }
+
+  .hero-photo-title {
+    font-size: 32px;
+  }
+
+  .hero-photo-sub {
+    font-size: 14px;
+  }
+
+  /* 強みセクション */
+  .strengths {
+    padding: 40px 16px;
+  }
+
+  .strengths-grid {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* 施工事例 */
+  .top-cases {
+    padding: 40px 16px;
+  }
+
+  /* CTA */
+  .top-cta {
+    padding: 48px 16px;
+  }
+
+  /* カード一覧 */
+  .cards-wrap {
+    flex-direction: column;
+    padding: 20px 16px;
+    gap: 16px;
+  }
+
+  .case-card {
+    width: 100%;
+  }
+
+  /* フィルター */
+  .filter-row {
+    padding: 0 16px;
+    flex-wrap: wrap;
+  }
+
+  /* 物件詳細 */
+  .detail-top {
+    flex-direction: column;
+  }
+
+  .detail-top-right {
+    width: 100%;
+  }
+
+  .detail-price {
+    font-size: 28px;
+  }
+
+  .photos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* お問い合わせ */
+  .contact-grid {
+    flex-direction: column;
+  }
+
+  .contact-info {
+    width: 100%;
+  }
+
+  /* ページヘッダー */
+  .page-header {
+    padding: 32px 16px 20px;
+  }
+
+}
